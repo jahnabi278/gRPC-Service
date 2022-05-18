@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.demo.grpc";
+
+message demoRequest{
+	int32 id = 1;
+	string label = 2;
+}
+
+message demoResponse{
+	int32 errorCode = 1;
+	string errorMessage = 2;
+}
+
+service demoService {
+	rpc demoInsert(demoRequest) returns (demoResponse);
+}
